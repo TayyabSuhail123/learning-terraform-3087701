@@ -32,7 +32,7 @@ resource "aws_instance" "blog" {
 resource "aws_security_group" "blog" {
   name        = "blog"
   description = "Allo HTTP and https. Allow everything out" 
-  vpc_id      = aws_vpc.default.id
+  vpc_id      = data.aws_vpc.default.id
 }
 
 resource "aws_vpc_security_group_ingress_rule" "blog_http_in" {
